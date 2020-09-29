@@ -1,0 +1,13 @@
+
+Aug 12, 2020 23:19:47.00 NEW SESSION
+Aug 12, 2020 23:19:47.00 [3196:13036:0812/231946.998:ERROR:socket_stream.cc(219)] Closing stream with result -2
+
+Aug 18, 2020 13:19:28.955 NEW SESSION
+Aug 18, 2020 13:19:28.957 [17728:23336:0818/131928.936:ERROR:socket_stream.cc(219)] Closing stream with result -2
+
+Aug 21, 2020 24:01:20.232 NEW SESSION
+Aug 21, 2020 24:01:20.232 [3296:8376:0821/000120.219:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -105
+Aug 21, 2020 01:02:38.445 [18452:11584:0821/010238.445:ERROR:socket_stream.cc(219)] Closing stream with result -2
+Aug 21, 2020 04:04:11.451 [18452:9344:0821/040411.449:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+Aug 21, 2020 07:44:57.314 [18452:11584:0821/074457.313:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -7
+Aug 21, 2020 13:17:16.502 [28724:20828:0821/131716.501:ERROR:socket_stream.cc(219)] Closing stream with result -2

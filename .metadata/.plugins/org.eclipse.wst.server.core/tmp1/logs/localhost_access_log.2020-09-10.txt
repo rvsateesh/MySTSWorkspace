@@ -1,0 +1,13 @@
+127.0.0.1 - - [10/Sep/2020:08:59:30 +0530] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [10/Sep/2020:09:01:56 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:01:59 +0530] "GET /coronokit/ HTTP/1.1" 200 944
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:01:59 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:02 +0530] "GET /coronokit/newuser.jsp?action=newuser HTTP/1.1" 200 934
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:10 +0530] "POST /coronokit/insertuser?action=insertuser HTTP/1.1" 200 2150
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:18 +0530] "POST /coronokit/showkit?action=showkit HTTP/1.1" 200 1238
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:21 +0530] "POST /coronokit/showkit?action=showkit HTTP/1.1" 200 1238
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:22 +0530] "POST /coronokit/ordersummary?action=ordersummary HTTP/1.1" 200 1085
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:25 +0530] "POST /coronokit/showkit?action=showkit HTTP/1.1" 200 1238
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:26 +0530] "POST /coronokit/ordersummary?action=ordersummary HTTP/1.1" 200 1085
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:28 +0530] "POST /coronokit/saveorder?action=saveorder HTTP/1.1" 200 511
+0:0:0:0:0:0:0:1 - - [10/Sep/2020:09:02:29 +0530] "GET /coronokit/index.jsp HTTP/1.1" 200 944

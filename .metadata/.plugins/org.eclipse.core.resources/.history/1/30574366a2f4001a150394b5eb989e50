@@ -1,0 +1,9 @@
+package com.wellsfargo.fsd.swbd.controller;
+
+public class WelcomeController {
+	
+	public String showHome() {
+		return "index";
+	}
+
+}

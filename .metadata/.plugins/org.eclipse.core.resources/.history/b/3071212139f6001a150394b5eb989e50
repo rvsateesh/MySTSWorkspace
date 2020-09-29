@@ -1,0 +1,22 @@
+package com.practice.java.spring.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.practice.java.spring.service.ServInterface;
+
+@Controller
+public class MyController {
+	
+	@Autowired
+	public ServInterface servInterface;
+	
+	@PostMapping("/home")
+	public ModelAndView login(@RequestParam("unm") String username) {
+		return new ModelAndView("loginpage", "msg", servInterface.doGreet(username));
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.wellsfargo.fsd.cms.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.wellsfargo.fsd.cms.dao.ContactRepository;
+import com.wellsfargo.fsd.cms.entity.Contact;
+import com.wellsfargo.fsd.cms.exception.ContactException;
+
+@Service
+public class ContactServiceImpl implements ContactService{
+
+	@Autowired
+	private ContactRepository contactRepo;
+	
+	@Override
+	public Contact Add(Contact contact) throws ContactException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Contact Save(Contact contact) throws ContactException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteContact(int contactId) throws ContactException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Contact getContact(int contactId) throws ContactException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Contact> getAllContacts() throws ContactException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

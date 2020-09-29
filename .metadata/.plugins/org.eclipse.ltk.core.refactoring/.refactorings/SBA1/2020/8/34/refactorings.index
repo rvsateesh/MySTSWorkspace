@@ -1,0 +1,18 @@
+1597841047865	Rename package 'com.wellsfargo.fsd.sba1.entity'
+1597842240790	Rename compilation unit 'ContactDao.java'
+1597842253356	Rename compilation unit 'ContactDaoJdbcImpl.java'
+1597842289872	Rename type 'ContactException'
+1597842938017	Rename package 'com.wellsfargo.fsd.sba1.controller'
+1597842962168	Rename package 'com.wellsfargo.fsd.sba1.dao'
+1597842996093	Rename package 'com.wellsfargo.fsd.sba1.exception'
+1597843019957	Rename package 'com.wellsfargo.fsd.sba1.model'
+1597843031522	Rename package 'com.wellsfargo.fsd.sba1.service'
+1597850510166	Delete element
+1597850514495	Delete element
+1597851103574	Delete elements
+1597851108566	Delete element
+1597895000015	Delete element
+1597895137256	Copy files
+1597895261946	Copy file
+1597895286876	Copy packages
+1597982968172	Copy file

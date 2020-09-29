@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.swbd.model;
+
+public class Item {
+
+}

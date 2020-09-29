@@ -1,0 +1,24 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+		<title>Welcome Home</title>
+	</head>
+	<jsp:include page="header.jsp" />
+	<body>		
+		<section class="container well">
+			<form action="/loginpage" method="POST">
+				<input type="text" name="username"/>
+				<input type="text" name="password"/>
+				<button type="button" class="btn btn-outline-success">Login</button>
+			</form>				
+		</section> 
+		<section class="container well">
+			<div class="container well">
+				<p>Welcome to our application!</p>
+				<p>Here you can find the services without login.</p>
+			</div>				
+		</section>		
+	</body>
+	<jsp:include page="footer.jsp" />
+</html>

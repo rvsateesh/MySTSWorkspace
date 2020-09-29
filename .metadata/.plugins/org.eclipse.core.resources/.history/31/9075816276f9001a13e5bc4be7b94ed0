@@ -1,0 +1,20 @@
+package com.wellsfargo.fsd.cms.test;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+
+import com.wellsfargo.fsd.cms.dao.ContactRepository;
+
+@DataJpaTest
+public class ContactDaoTest {
+	
+	@Autowired
+	private ContactRepository contactRepo;
+	
+	@Autowired
+	private TestEntityManager entityManager;
+	
+	
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ContactServiceUnitTest" project="cms-spring-web-data-test" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.wellsfargo.fsd.cms.test.ContactServiceUnitTest" time="0.069" displayname="ContactServiceUnitTest" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.cms.test.ContactServiceUnitTest]">
+    <testcase name="whenAdd_givenNewContact_shouldReturnThatContact" classname="com.wellsfargo.fsd.cms.test.ContactServiceUnitTest" time="0.055" displayname="whenAdd_givenNewContact_shouldReturnThatContact()" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.cms.test.ContactServiceUnitTest]/[method:whenAdd_givenNewContact_shouldReturnThatContact()]"/>
+    <testcase name="whenAdd_givenExistingContact_shouldReturnThatContact" classname="com.wellsfargo.fsd.cms.test.ContactServiceUnitTest" time="0.014" displayname="whenAdd_givenExistingContact_shouldReturnThatContact()" uniqueid="[engine:junit-jupiter]/[class:com.wellsfargo.fsd.cms.test.ContactServiceUnitTest]/[method:whenAdd_givenExistingContact_shouldReturnThatContact()]"/>
+  </testsuite>
+</testrun>

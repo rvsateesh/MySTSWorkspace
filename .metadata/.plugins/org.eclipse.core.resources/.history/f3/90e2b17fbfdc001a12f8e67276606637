@@ -1,0 +1,14 @@
+<html>
+<head>
+<title> My first dynamic web app: Java web 1</title>
+</head>
+<body>
+<h1>
+Hello!</h1>
+<form>
+<label>Username: </label>
+<input> type="text" name="unm"</input>
+<button>OK</button>
+</form>
+</body>
+</html>

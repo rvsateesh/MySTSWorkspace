@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>SpringBoot - Home </title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+	<jsp:include page="/header" />
+		<section>
+		<nav>
+			<a href="/Home">Home</a>
+		</nav>
+			<h3>Welcome Home</h3>
+		</section>
+	</body>
+</html>

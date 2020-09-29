@@ -1,0 +1,5 @@
+package com.practice.java.spring.controller.copy;
+
+public class MyController {
+
+}

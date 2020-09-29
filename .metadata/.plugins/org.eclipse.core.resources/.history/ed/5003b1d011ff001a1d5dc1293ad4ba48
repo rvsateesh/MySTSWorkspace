@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="spring-form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<nav>
+	<jsp:include page="${pageContext.request.contextPath}/header" />
+</nav>
+<section class="container-fluid p-4">
+	<h3>Here is your Order!</h3>
+	<c:choose>
+		<c:when test="${ckit == null}">
+			<p class="well well-info">Kit is empty, please add products to cart!</p>
+		</c:when>
+		<c:otherwise>
+		<spring-form:form  class="form" action="${pageContext.request.contextPath}/user/checkout?ckitId=${ckit.id }">
+			<label>Corona Kit Id: </label><small>${ckit.id }</small><br/>
+			<label>Delivery Address: </label><small>${ckit.deliveryAddress }</small><br/>
+			<label>Order Date: </label><small>${ckit.orderDate }</small><br/>
+			<label>Total Amount: </label><small>${ckit.totalAmount }</small><br/>
+			<button class="btn btn-sm btn-danger">Place Order</button>
+		</spring-form:form>			
+		</c:otherwise>
+	</c:choose>
+	</section>
+</body>
+</html>

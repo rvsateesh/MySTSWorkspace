@@ -1,0 +1,19 @@
+package com.practice.java.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MyController {
+	
+	@PostMapping("/loginpage")
+	public ModelAndView login(String username, String password) {
+		ModelAndView mv = new ModelAndView();
+		String greeting = "Welcome " + username;
+		mv.addObject("greeting", greeting);
+		return mv;
+	}
+
+}

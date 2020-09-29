@@ -1,0 +1,78 @@
+package com.eval.coronakit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.eval.coronakit.entity.KitDetail;
+import com.eval.coronakit.entity.ProductMaster;
+import com.eval.coronakit.service.CoronaKitService;
+import com.eval.coronakit.service.KitDetailService;
+import com.eval.coronakit.service.ProductService;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	
+	@Autowired
+	ProductService productService;
+	
+	@Autowired
+	CoronaKitService coronaKitService;
+	
+	@Autowired
+	KitDetailService kitDetailService;
+	
+	@RequestMapping("/home")
+	public String home() {
+		return "user-home";
+	}
+	
+	@RequestMapping("/show-kit")
+	public ModelAndView showKit() {
+		ModelAndView mv = new ModelAndView("show-cart");
+		mv.addObject("kit", kitDetailService.getAllKitItems());
+		return mv;
+	}
+
+	@RequestMapping("/show-list")
+	public ModelAndView showList() {
+		ModelAndView mv = new ModelAndView("show-all-item-user");
+		mv.addObject("products", productService.getAllProducts());
+		return mv;
+	}
+	
+	@RequestMapping("/add-to-cart")
+	public ModelAndView addToKit(@ModelAttribute ProductMaster product) {
+		ModelAndView mv = new ModelAndView("show-all-item-user");
+		mv.addObject("products", productService.getAllProducts());
+		
+		  KitDetail mykit = new KitDetail(); 
+		  mykit.setProductId(product.getId());
+		  mykit.setQuantity(1); 
+		  mykit.setAmount(product.getCost()*mykit.getQuantity());
+		  mykit.setCoronaKitId(0); 
+		  mykit.setId(product.getId());
+		return mv;
+	}
+	
+	@RequestMapping("/checkout")
+	public String checkout(Model model) {
+		return null;
+	}
+	
+	@RequestMapping("/finalize")
+	public String finalizeOrder(String address,Model model) {
+		return null;
+	}
+	
+	@RequestMapping("/delete/{itemId}")
+	public String deleteItem(@PathVariable("itemId") int itemId) {
+		return null;
+	}
+}

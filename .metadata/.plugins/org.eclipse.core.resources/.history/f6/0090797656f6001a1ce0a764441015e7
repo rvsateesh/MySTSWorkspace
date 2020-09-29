@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.cms.controller;
+
+public class DefaultController {
+
+}

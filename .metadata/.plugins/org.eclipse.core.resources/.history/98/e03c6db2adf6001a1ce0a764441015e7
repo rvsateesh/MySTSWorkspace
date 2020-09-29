@@ -1,0 +1,9 @@
+<header>
+	<h2 class="text-center">${msg }</h2>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="nav-link active" href = "/home">HOME</a>
+			<span class="navbar-toggler-icon"></span>
+		</nav>
+	</div>
+</header>

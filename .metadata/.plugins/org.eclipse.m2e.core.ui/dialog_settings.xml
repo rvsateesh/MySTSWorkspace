@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="com.wellsfargo.fsd.shoppingcart"/>
+			<item value="com.wellsfargo.fsd.sba1"/>
+			<item value="ContactManagementPortal"/>
+			<item value="com.wellsfargo.fsd.JavaWeb4"/>
+			<item value="com.wellsfargo.fsd"/>
+		</list>
+		<list key="name">
+			<item value="ShoppintCart"/>
+			<item value="SBA1"/>
+			<item value="ContactManagementPortal"/>
+			<item value="JavaWeb4"/>
+			<item value="JavaWeb3"/>
+		</list>
+		<list key="artifactId">
+			<item value="ShoppintCart"/>
+			<item value="SBA1"/>
+			<item value="ContactManagementPortal"/>
+			<item value="JavaWeb4"/>
+			<item value="JavaWeb3"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\Sateesh\Desktop\MyDesktop\MySTSWorkspace\hibernate\jpa-hibernate-demo-2\src\main\java\com\wellsfargo\jpahd\entity\ContractEmployee.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.wellsfargo.fsd.spring"/>
+			<item value="com.wellsfargo.fsd"/>
+			<item value="com.wellsfargo"/>
+		</list>
+		<list key="name">
+			<item value="spring-core-demo-xml"/>
+			<item value="jpa-hibernate-demo-1"/>
+		</list>
+		<list key="artifactId">
+			<item value="spring-core-demo-xml"/>
+			<item value="jpa-hibernate-demo-1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

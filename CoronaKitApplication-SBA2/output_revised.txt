@@ -1,0 +1,16 @@
+
+testAddNewProduct=false
+testAdminProductListPage=true
+testAdminDeleteProduct=false
+testAdminProductEntryPage=true
+testAdminHome=true
+testUserAddProductToKit=false
+testUserFinalizeOrder=false
+testUserHome=true
+testUserDeleteItemFormKit=false
+testUserListAllProduct=true
+testUserShowKit=true
+testUserCheckout=false
+testMainMenuPageUserAccess=true
+testHomePage=true
+testMainMenuPageAdminAccess=true

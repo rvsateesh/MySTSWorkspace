@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+		<title>Welcome Home</title>
+	</head>
+	<jsp:include page="header.jsp" />
+	<body>		
+		<section class="container well">
+			<form action="loginpage">
+				<label>User Name</label>
+				<input class="form-control" type="text" name="username"/>
+				<label>Password</label>
+				<input class="form-control" type="text" name="password"/>
+				<button type="submit" class="btn btn-success">Login</button>
+			</form>				
+		</section> 
+	</body>
+	<jsp:include page="footer.jsp" />
+</html>

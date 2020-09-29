@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+<%@taglib uri="http://www.springframework.org/tags/form"  prefix="spring-form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<nav>
+	<jsp:include page="${pageContext.request.contextPath}/header" />
+</nav>
+<spring-form:form  class="form">
+<section class="container-fluid p-4">
+	<c:choose>
+		<c:when test="${products == null || products.isEmpty() }">
+			<p class="well well-info">No products Found!</p>
+		</c:when>
+		<c:otherwise>
+			<table class="table table-striped table-hover table-border">
+				<tr>
+					<th>Product Id</th>
+					<th>Product Name</th>
+					<th>Product Cost</th>
+					<th>Product Description</th>
+					<th>Product Quantity</th>
+					<th>Action</th>
+				</tr>
+				<c:forEach items="${products }" var="product">
+					<tr>
+						<td><input type="number" value="${product.id }"></td>
+						<td>${product.productName }</td>
+						<td><input type="number" value="${product.cost }"></td>
+						<td>${product.productDescription }</td>
+						<td><input type="number" name="quantity" value="0" min="0"></td>
+						<td>
+							<a class="btn btn-sm btn-danger" href="${pageContext.request.contextPath}/user/add-to-cart?productId=${product.id },pcost=${product.cost }" >Add Product</a>
+						</td>
+				</c:forEach>
+			</table>
+			<button class="btn btn-sm btn-danger" >Show Cart</button>
+		</c:otherwise>
+	</c:choose>
+	</section>
+</spring-form:form>
+</body>
+</html>

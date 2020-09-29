@@ -1,0 +1,5 @@
+package com.wellsfargo.fsd.cms.service;
+
+public class UserDetailsServiceImpl {
+
+}

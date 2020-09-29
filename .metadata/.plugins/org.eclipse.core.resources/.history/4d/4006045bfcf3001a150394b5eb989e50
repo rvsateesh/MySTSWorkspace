@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Item </title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+	<jsp:include page="/header" />
+		<section>
+			<h3>Item Form</h3>
+			
+			<form method="POST">
+				<div>
+					<label>Icode</label>
+					<input type="number" name="icode"/>
+				</div>
+				<div>
+					<label>Item name</label>
+					<input type="text" name="name"/>
+				</div>
+				<div>
+					<label>Cost Price</label>
+					<input type="decimal" name="costPrice"/>
+				</div>
+				<div>
+					<label>Category</label>
+					<select name="category">
+						<option value = "AGRO">AGRO</option>
+						<option value = "ORNAMENT">ORNAMENT</option>
+						<option value = "DAIRY">DAIRY</option>
+						<option value = "CLOTHES">CLOTHES</option>
+						<option value = "OTHERS">OTHERS</option>
+					</select>
+				</div>
+				<button>OK</button>
+			</form>
+		</section>
+	</body>
+</html>

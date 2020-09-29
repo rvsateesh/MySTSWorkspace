@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;cms-spring-web-test&apos; to &apos;cms-spring-web-data-test&apos;" description="Rename resource &apos;cms-spring-web-test&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/cms-spring-web-test" name="cms-spring-web-data-test" stamp="1600408556599" updateReferences="true"/>
+</session>

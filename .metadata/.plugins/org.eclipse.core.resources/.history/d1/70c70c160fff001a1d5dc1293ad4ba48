@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="spring" %>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Passwords did not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+	<h2>New User Register here...</h2>
+	<hr/>
+	
+	<spring:form action="${pageContext.request.contextPath}/register-save" method="POST" modelAttribute="userDetails">
+		<br/>
+		<br/>
+		<spring:label path ="username">Enter user name</spring:label>
+		<spring:input path="username"/>
+		<br/>
+		<br/>
+		<spring:label id="password" path="password">Enter password</spring:label>
+		<spring:password id="password" path="password"/>
+		<br/>
+		<br/>
+		<spring:label id="confirmPassword" path="password">Confirm Password</spring:label>
+		<spring:password id="confirmPassword" path="password" onChange="return Validate()"/>
+		<br/>
+		<br/>
+		<spring:label path="email">Enter email</spring:label>
+		<spring:input path="email"/>
+		<br/>
+		<br/>
+		<spring:label path="contact">Enter Contact number</spring:label>
+		<spring:input path="contact"/>
+		<br/>
+		<br/>
+		<p>Select Role</p>
+		<ul>
+			<li> <input type="checkbox" name="roles" value="ADMIN"/></li>
+			<li> <input type="checkbox" name="roles" value="USER"/></li>
+		</ul>
+		<br/>
+		<br/>
+		<input type="submit" value="Register">
+
+	</spring:form>
+	
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>  
+		<title>Welcome Home</title>
+	</head>
+	<body>
+		<jsp:include "header.jsp" />
+		<section>
+			<div class="container well">
+				<button type="button" class="btn btn-outline-success">Click</button>
+			</div> 
+		
+		<jsp:include "footer.jsp" />
+	</body>
+</html>

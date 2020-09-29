@@ -1,0 +1,58 @@
+package com.wellsfargo.fsd.cms.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wellsfargo.fsd.cms.entity.Contact;
+import com.wellsfargo.fsd.cms.exception.ContactException;
+import com.wellsfargo.fsd.cms.service.ContactService;
+@RestController
+@RequestMapping("/searchContacts")
+public class SearchContactRestController {
+    @Autowired
+    private ContactService contactService;
+    
+    @GetMapping("/{mobile}")
+    public ResponseEntity<List<Contact>> getbyMobile(@PathVariable("mobile") String mobile) throws ContactException{
+    	List<Contact> contact = (List<Contact>) contactService.findByMobile(mobile);
+        return new ResponseEntity<List<Contact>>(contact, HttpStatus.OK);
+    }
+    
+    @GetMapping("/{group}")
+    public ResponseEntity<List<Contact>> getbyGroup(@PathVariable("group") String group) throws ContactException{
+        ResponseEntity<List<Contact>> resp=null;
+        
+        List<Contact> contacts = contactService.findAllByGroup(group);
+        
+        if(contacts.isEmpty()) {
+            resp = new ResponseEntity<List<Contact>>(HttpStatus.NOT_FOUND);
+        }else {
+            resp = new ResponseEntity<List<Contact>>(contacts, HttpStatus.OK);
+        }
+        return resp;
+    }
+    
+    @GetMapping("/{start, end}")
+    public ResponseEntity<List<Contact>> getbyGroup(@DateTimeFormat(iso=ISO.DATE) @PathVariable("start") LocalDate start, @DateTimeFormat(iso=ISO.DATE) @PathVariable("end") LocalDate end) throws ContactException{
+        ResponseEntity<List<Contact>> resp=null;
+        
+        List<Contact> contacts = contactService.findAllBornInRange(start, end);
+        
+        if(contacts.isEmpty()) {
+            resp = new ResponseEntity<List<Contact>>(HttpStatus.NOT_FOUND);
+        }else {
+            resp = new ResponseEntity<List<Contact>>(contacts, HttpStatus.OK);
+        }
+        return resp;
+    }
+}

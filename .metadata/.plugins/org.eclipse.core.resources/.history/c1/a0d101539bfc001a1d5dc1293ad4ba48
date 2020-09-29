@@ -1,0 +1,81 @@
+package com.wellsfargo.fsd.cms.conf;
+
+import com.wellsfargo.fsd.cms.entity.CMSUser;
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+    @Autowired
+    private PasswordEncoder pEnc;
+    
+    @Autowired
+    private CMSUserRepo userRepo; 
+    
+    @Override
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        UserDetails userDetails;
+        CMSUser user = userRepo.findByUserName(userName);
+        
+        if(user==null) {
+            throw new UsernameNotFoundException("No Such User Found  ");
+        }
+        
+        List<GrantedAuthority> authorities= new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority(user.getRole()));
+        
+        
+        userDetails = (UserDetails) new User(
+                user.getUserName(),
+                user.getEncodedPassword(),
+                authorities);
+        
+        
+        return userDetails;
+    }
+    public CMSUser save(CMSUser user) {
+        user.setEncodedPassword(pEnc.encode(user.getPassword()));
+        return userRepo.save(user);
+    } 
+}
+from Vamsy Kiran Aripaka to everyone:    11:41 AM
+done?
+from Raj Sharma to everyone:    11:42 AM
+yes
+from Vamsy Kiran Aripaka to everyone:    11:46 AM
+.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import com.wellsfargo.fsd.cms.service.UserDetailsServiceImpl;
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguaration extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // Setting Service to find User in the database.
+        // And Setting PassswordEncoder
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+    }
+from Vamsy Kiran Aripaka to everyone:    11:46 AM
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+        .antMatchers("/admin/**").hasAuthority("ADMIN")
+        .antMatchers("/user/**").hasAuthority("USER");
+        http.formLogin().loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/")
+                .usernameParameter("unm").passwordParameter("pwd");
+        http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
+        
+        http.exceptionHandling().accessDeniedPage("/pages/accessDeniedPage.jsp");
+    }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+    }
+}

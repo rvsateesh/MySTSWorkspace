@@ -1,0 +1,5 @@
+
+testMainMenuPageInvalidCredentials=false
+testAdminHomeInvalidCredential=true
+testMainMenuPageWithoutCredentials=false
+testUserHomeInvalidCredential=true

@@ -1,0 +1,8 @@
+<header>
+	<h3>${msg }</h3>
+	<div class="container">
+		<nav class="navbar navbar-dark bg-dark">
+			<a href = "/home">HOME</a>
+		</nav>
+	</div>
+</header>

@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Item </title>
+		<link rel="stylesheet" href="css/site.css" />
+	</head>
+	<body>
+	<jsp:include page="/header" />
+		<section>
+			<h3>Item Form</h3>
+			
+			<form method="POST">
+				<button>OK</button>
+			</form>
+			
+			<p><strong>${msg}</strong></p>
+		</section>
+	</body>
+</html>

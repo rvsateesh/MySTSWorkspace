@@ -1,0 +1,52 @@
+package com.eval.coronakit.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.eval.coronakit.dao.ProductMasterRepository;
+import com.eval.coronakit.entity.ProductMaster;
+
+@Service
+public class ProductServiceImpl implements ProductService {
+
+	@Autowired
+	ProductMasterRepository repository;
+	
+	public void addDefaultProducts() {
+		ProductMaster product1 = new ProductMaster(1, "Sanitizer", 150, "Alchohol Hand Sanitizer");
+		this.repository.save(product1);
+		ProductMaster product2 = new ProductMaster(1, "Oxymeter", 150, "Digital Oxymeter");
+		this.repository.save(product2);
+		ProductMaster product3 = new ProductMaster(1, "Dolo", 150, "Antibiotic Tablet");
+		this.repository.save(product3);
+	}
+	
+	@Override
+	public ProductMaster addNewProduct(ProductMaster product) {
+		// TODO Auto-generated method stub
+		
+		return this.repository.save(product);
+	}
+
+	@Override
+	public List<ProductMaster> getAllProducts() {
+		// TODO Auto-generated method stub
+		return this.repository.findAll();
+	}
+
+	@Override
+	public void deleteProduct(int productId) {
+		// TODO Auto-generated method stub
+		this.repository.deleteById(productId);
+		//return this.repository.getOne(productId);
+	}
+
+	@Override
+	public ProductMaster getProductById(int productId) {
+		// TODO Auto-generated method stub
+		return this.repository.getOne(productId);
+	}
+
+}

@@ -1,0 +1,85 @@
+package com.eval.coronakit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.eval.coronakit.entity.KitDetail;
+import com.eval.coronakit.service.CoronaKitService;
+import com.eval.coronakit.service.KitDetailService;
+import com.eval.coronakit.service.ProductService;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+	
+	@Autowired
+	ProductService productService;
+	
+	@Autowired
+	CoronaKitService coronaKitService;
+	
+	@Autowired
+	KitDetailService kitDetailService;
+	
+	@RequestMapping("/home")
+	public String home() {
+		return "user-home";
+	}
+	
+	@RequestMapping("/show-kit")
+	public ModelAndView showKit() {
+		ModelAndView mv = new ModelAndView("show-cart");
+		mv.addObject("kit", kitDetailService.getAllKitItemsOfAKit(1));
+		return mv;
+	}
+
+	@RequestMapping("/show-list")
+	public ModelAndView showList() {
+		ModelAndView mv = new ModelAndView("show-all-item-user");
+		mv.addObject("products", productService.getAllProducts());
+		return mv;
+	}
+	
+	/*
+	 * @RequestMapping("/add-to-cart/{productId,pcost}") public String
+	 * addToKit(@PathVariable("productId") int productId, @RequestParam("pquantity")
+	 * int pquantity, @PathVariable("pcost") int pcost) {
+	 * System.out.println("quantity is: "+ pquantity); KitDetail mykit = new
+	 * KitDetail(); mykit.setProductId(productId); mykit.setQuantity(pquantity);
+	 * mykit.setAmount(pquantity*pcost); mykit.setCoronaKitId(productId);
+	 * mykit.setId(productId);
+	 * 
+	 * System.out.println("mykit is: "+ mykit); return "show-all-item-user"; }
+	 */
+	@RequestMapping("/add-to-cart/{productId, pcost}")
+	public String addToKit(@PathVariable("productId") int productId, @PathVariable("pcost") int pcost) {
+		KitDetail mykit = new KitDetail();
+		mykit.setProductId(productId);
+		mykit.setQuantity(1);
+		mykit.setAmount(pcost*mykit.getQuantity());
+		mykit.setCoronaKitId(0);
+		mykit.setId(productId);
+		System.out.println("mykit is: "+ mykit);
+		return "redirect:/show-list";
+	}
+	
+	@RequestMapping("/checkout")
+	public String checkout(Model model) {
+		return null;
+	}
+	
+	@RequestMapping("/finalize")
+	public String finalizeOrder(String address,Model model) {
+		return null;
+	}
+	
+	@RequestMapping("/delete/{itemId}")
+	public String deleteItem(@PathVariable("itemId") int itemId) {
+		return null;
+	}
+}
